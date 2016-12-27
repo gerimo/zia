@@ -1,3 +1,5 @@
+import os
+print os.path.realpath(__file__)
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -61,6 +63,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+import os 
 
 	</head>
 	<body>
@@ -70,7 +73,7 @@
 			<div class="top">
 				<div class="container">
 					<span> <a href="#"><i>@</i> <% email %></a></span>
-					<span> <a href="tel://<?email?>"><i class="icon-mobile3"></i> <% telephone %></a></span>
+					<span> <a href="tel://<?telephone?>"><i class="icon-mobile3"></i> <% telephone %></a></span>
 				</div>
 			</div>
 			<!-- end:top -->
@@ -86,7 +89,7 @@
 								<a href="index.html">Inicio</a>
 							</li>
 							<li>
-								<a href="">Filosofía</a>
+								<a href="">Hoa</a>
 							</li>
 							<li>
 								<a href="" class="fh5co-sub-ddown">Servicios</a>
