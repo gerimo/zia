@@ -21,6 +21,43 @@ class FrontEnd(object):
         return html
 
     @cherrypy.expose
+    def sasa(self): 
+        cherrypy.session["email"] = "gemail"
+
+    @cherrypy.expose
+    def soso(self):
+        variable = cherrypy.session["email"]
+        client = MongoClient()
+        db = client.cherrypies        
+        result = db.users.insert_one({
+            "email": "hola",
+            "telephone": "telephone",
+            "password": "",
+            "company": {
+                "name": "company_name",
+                "email": "company_email",
+                "telephone": "company_telephone",
+                "address": ""
+                }
+    })  
+        return variable
+
+
+        @cherrypy.expose
+    def template1(self):
+        client = MongoClient()
+        db = client.cherrypies        
+        c = db.users.find({"company.email":"alianzas@sigur.cl"})
+        for document in c:
+            email = document["email"]
+            company_name = document["company"]["name"]
+            company_email = document["company"]["email"]
+            company_telephone = document["company"]["telephone"]
+            company_address = document["company"]["address"]          
+        template = open("templates/a/template.html").read()
+        return template.format(email=email,company_name=company_name,company_email=company_email,company_telephone=company_telephone,company_address=company_address)
+
+    @cherrypy.expose
     def popa(self):
         client = MongoClient()
         db = client.cherrypies        
