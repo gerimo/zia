@@ -277,7 +277,7 @@ if __name__ == '__main__':
             'tools.expires.on': True,    
         }
     }
-    cherrypy.config.update({'server.socket_port': 9090})
+    cherrypy.config.update({'server.socket_port': 80})
     cherrypy.quickstart(FrontEnd(), '/', conf)
 
 
