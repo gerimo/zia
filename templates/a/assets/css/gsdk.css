@@ -1577,7 +1577,7 @@ input.ct-red + span + label + span.switch-right {
 }
 
 .section {
-  padding: 30px 0;
+  padding: 20px 0px 0px 0px;
   position: relative;
   background-color: #FFFFFF;
 }
@@ -4483,7 +4483,7 @@ body > .navbar-collapse.collapse {
   margin-top: 10px;
 }
 .card-price .content {
-  min-height: 330px;
+  min-height: 260px;
 }
 .card-price .list-unstyled {
   padding-top: 20px;

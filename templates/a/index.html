@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="root/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     
-    <title>{user.company.wepage.title_1}</title>
+    <title>{user.company.webpage.title_1}</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -34,30 +34,28 @@
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
       </button>
-      <a class="navbar-brand" href="http://gsdk.creative-tim.com/"><i class="fa fa-chevron-left"></i> {user.company.name}</a>
+      <a class="navbar-brand" href="http://gsdk.creative-tim.com/"></i> {user.company.name}</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
    <div class="collapse navbar-collapse">
       <ul  class="nav navbar-nav navbar-right">
             <li>
-                <a href="./index.html">
-                     {user.company.wepage.menu_1}
+                <a href="#{user.company.webpage.menu_1}">
+                     {user.company.webpage.menu_1}
                 </a>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                     {user.company.wepage.menu_2}
-                     <b class="caret"></b>
+            <li>
+                <a href="#{user.company.webpage.menu_2}">
+                     {user.company.webpage.menu_2}
                 </a>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {user.company.wepage.menu_3}
-                     <b class="caret"></b>
+            <li>
+                <a href="#{user.company.webpage.menu_3}">
+                    {user.company.webpage.menu_3}
                 </a>
             </li>
-            <li><a href="" class="btn btn-round btn-default">{user.company.wepage.menu_4}</a></li>
+            <li><a href="#{user.company.webpage.menu_4}" class="btn btn-round btn-default">{user.company.webpage.menu_4}</a></li>
        </ul>      
     </div><!-- /.navbar-collapse -->
   </div>
@@ -72,7 +70,7 @@
   <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
 </video>        <div class="small-info">
             <h1>{user.company.name}</h1>
-            <h3>{user.company.wepage.tag_line_1}</h3>
+            <h3>{user.company.webpage.tag_line_1}</h3>
         </div>
     </div>
 
@@ -92,15 +90,15 @@
 </div>
 -->
 
-    <div class="section">
+    <div class="section" id="">
         <div class="container">
 <!--         what is row -->
             <div class="row tim-row">
-                <h2 class="text-center"> {user.company.wepage.summary_title_1} </h2>
+                <h2 class="text-center"> {user.company.webpage.summary_title_1} </h2>
                 <legend></legend>
                 <div class="col-md-8 col-md-offset-2">
                     <p>
-                    {user.company.wepage.summary_content_1}
+                    {user.company.webpage.summary_content_1}
                     </p>
                 </div>
                 
@@ -108,7 +106,7 @@
          </div>   
     <div>     
 
-    <div class="section">
+    <div class="section" id="{user.company.webpage.menu_1}">
         <div class="container">
             <div class="clients-presentation">
                 <div class="row">
@@ -118,8 +116,8 @@
                                 <i class="pe-7s-note2"></i>
                             </div>
                             <div class="description">
-                                <h3> {user.company.wepage.proposition_title_1} </h3>
-                                <p class="text-muted">{user.company.wepage.proposition_content_1} </p>
+                                <h3> {user.company.webpage.proposition_title_1} </h3>
+                                <p class="text-muted">{user.company.webpage.proposition_content_1} </p>
                             </div>
                         </div>
                      </div>
@@ -129,8 +127,8 @@
                                 <i class="pe-7s-scissors"></i>
                             </div>
                             <div class="description">
-                                <h3> {user.company.wepage.proposition_title_2} </h3>
-                                <p class="text-muted">{user.company.wepage.proposition_content_2} </p>
+                                <h3> {user.company.webpage.proposition_title_2} </h3>
+                                <p class="text-muted">{user.company.webpage.proposition_content_2} </p>
                             </div>
                         </div>
                      </div>
@@ -140,8 +138,8 @@
                                 <i class="pe-7s-tools"></i>
                             </div>
                             <div class="description">
-                                <h3> {user.company.wepage.proposition_title_3} </h3>
-                                <p class="text-muted">{user.company.wepage.proposition_content_3}</p>
+                                <h3> {user.company.webpage.proposition_title_3} </h3>
+                                <p class="text-muted">{user.company.webpage.proposition_content_3}</p>
                             </div>
                         </div>
                      </div>
@@ -151,8 +149,8 @@
                                 <i class="pe-7s-paint"></i>
                             </div>
                             <div class="description">
-                                <h3> {user.company.wepage.proposition_title_4} </h3>
-                                <p class="text-muted">{user.company.wepage.proposition_content_4} </p>
+                                <h3> {user.company.webpage.proposition_title_4} </h3>
+                                <p class="text-muted">{user.company.webpage.proposition_content_4} </p>
                             </div>
                         </div>
                      </div>
@@ -162,98 +160,98 @@
     </div> <!-- end section meet our clients -->
 
 
-<div class="section section-gray">
+<div class="section section-gray" id="{user.company.webpage.menu_2}">
             <div class="container">
                 <div class="big-info">
-                    <h3 class="text-center">{user.company.wepage.service_title_1} <br>
-                        <small>{user.company.wepage.service_subtitle_2}</small>
+                    <h3 class="text-center">{user.company.webpage.service_title_1} <br>
+                        <small>{user.company.webpage.service_subtitle_2}</small>
                     </h3>
                 </div>
                 <div class="row">
                      <div class="col-md-4">
                     <div class="card card-price">
                         <div class="content">
-                            <h6 class="category">{user.company.wepage.pricing_title_1}</h6>
-                            <h1 class="price">
-                                <small>&euro;</small>
-                            </h1>
+                            <h6 class="category">{user.company.webpage.pricing_title_1}</h6>
+                            <!--<h1 class="price">
+                                <small></small>
+                            </h1>-->
                             <ul class="list-unstyled list-lines">
                                 <li>
-                                    <i class="fa fa-comments"></i> <b></b> {user.company.wepage.pricing_content_1}
+                                    <i class="fa fa-comments"></i> <b></b> {user.company.webpage.pricing_content_1}
                                 </li>
                                 <li>
-                                    <i class="fa fa-magic"></i> <b></b> {user.company.wepage.pricing_content_2}
+                                    <i class="fa fa-magic"></i> <b></b> {user.company.webpage.pricing_content_2}
                                 </li>
                                 <li>
-                                    <i class="fa fa-male"></i> <b></b> {user.company.wepage.pricing_content_3}
+                                    <i class="fa fa-male"></i> <b></b> {user.company.webpage.pricing_content_3}
                                 </li>
                                 <li>
-                                    <i class="fa fa-level-up"></i> <b></b> {user.company.wepage.pricing_content_4}
+                                    <i class="fa fa-level-up"></i> <b></b> {user.company.webpage.pricing_content_4}
                                 </li>
                             </ul>
                         </div>
                         <div class="footer">
-                           <button type="button" class="btn btn-info btn-round btn-block">{user.company.wepage.action}</button>
+                           <button type="button" class="btn btn-info btn-round btn-block">{user.company.webpage.action}</button>
                         </div>
                     </div> <!-- end card -->
-                </div>
+                </div><br>
                 <div class="col-md-4">
                     <div class="card card-price card-price-best-deal">
                         <div class="content">
-                            <h6 class="category">{user.company.wepage.pricing_title_2}</h6>
-                            <h1 class="price">
-                                <small>&euro;</small>
-                            </h1>
+                            <h6 class="category">{user.company.webpage.pricing_title_2}</h6>
+                            <!--<h1 class="price">
+                                <small></small>
+                            </h1>-->
                             <ul class="list-unstyled list-lines">
                                 <li>
-                                    <i class="fa fa-comments"></i> <b></b> {user.company.wepage.pricing_content_1}
+                                    <i class="fa fa-comments"></i> <b></b> {user.company.webpage.pricing_content_1}
                                 </li>
                                 <li>
-                                    <i class="fa fa-magic"></i> <b></b> {user.company.wepage.pricing_content_2}
+                                    <i class="fa fa-magic"></i> <b></b> {user.company.webpage.pricing_content_2}
                                 </li>
                                 <li>
-                                    <i class="fa fa-male"></i> <b></b> {user.company.wepage.pricing_content_3}
+                                    <i class="fa fa-male"></i> <b></b> {user.company.webpage.pricing_content_3}
                                 </li>
                                 <li>
-                                    <i class="fa fa-dollar"></i> <b></b> {user.company.wepage.pricing_content_4}
+                                    <i class="fa fa-dollar"></i> <b></b> {user.company.webpage.pricing_content_4}
                                 </li>
                                 <li>
-                                    <i class="fa fa-level-up"></i> <b></b> {user.company.wepage.pricing_content_5}
+                                    <i class="fa fa-level-up"></i> <b></b> {user.company.webpage.pricing_content_5}
                                 </li>
                                  <li>
-                                    <i class="fa fa-phone"></i> <b></b> {user.company.wepage.pricing_content_6}
+                                    <i class="fa fa-phone"></i> <b></b> {user.company.webpage.pricing_content_6}
                                 </li>
                             </ul>
                         </div>
                         <div class="footer">
-                           <button type="button" class="btn btn-info btn-round btn-fill btn-block">{user.company.wepage.action}</button>
+                           <button type="button" class="btn btn-info btn-round btn-fill btn-block">{user.company.webpage.action}</button>
                         </div>
                     </div> <!-- end card -->
                 </div>
                 <div class="col-md-4">
                     <div class="card card-price">
                         <div class="content">
-                            <h6 class="category">{user.company.wepage.pricing_title_3}</h6>
-                            <h1 class="price">
-                                <small>&euro;</small>
-                            </h1>
+                            <h6 class="category">{user.company.webpage.pricing_title_3}</h6>
+                            <!-- <h1 class="price">
+                                <small></small>
+                            </h1> -->
                              <ul class="list-unstyled list-lines">
                                 <li>
-                                    <i class="fa fa-comments"></i> <b></b> {user.company.wepage.pricing_content_1}
+                                    <i class="fa fa-comments"></i> <b></b> {user.company.webpage.pricing_content_1}
                                 </li>
                                 <li>
-                                    <i class="fa fa-magic"></i> <b></b> {user.company.wepage.pricing_content_2}
+                                    <i class="fa fa-magic"></i> <b></b> {user.company.webpage.pricing_content_2}
                                 </li>
                                 <li>
-                                    <i class="fa fa-male"></i> <b></b> {user.company.wepage.pricing_content_3}
+                                    <i class="fa fa-male"></i> <b></b> {user.company.webpage.pricing_content_3}
                                 </li>
                                 <li>
-                                    <i class="fa fa-level-up"></i><b></b> {user.company.wepage.pricing_content_4}
+                                    <i class="fa fa-level-up"></i><b></b> {user.company.webpage.pricing_content_4}
                                 </li>
                             </ul>
                         </div>
                         <div class="footer">
-                           <button type="button" class="btn btn-info btn-round btn-block">{user.company.wepage.action}</button>
+                           <button type="button" class="btn btn-info btn-round btn-block">{user.company.webpage.action}</button>
                         </div>
                     </div> <!-- end card -->
                 </div>
@@ -262,9 +260,9 @@
     </div>
 
 
-    <div class="section section-testimonials">
+    <div class="section section-testimonials" id="{user.company.webpage.menu_3}">
         <div class="container">
-            <h2 class="section-title">What people think...</h2>
+            <h2 class="section-title">{user.company.webpage.customer_title_1}</h2>
              <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
@@ -274,13 +272,13 @@
                                  <div class="card card-plain">
                                     <div class="content">
                                         <a target="_blank" href="http://www.creative-tim.com/product/get-shit-done-pro">
-                                            <h4 class="title">I've bought it, and I have to say that it's simply awesome. Creative Tim creates awesome looking templates! :)</h4>
+                                            <h4 class="title">{user.company.webpage.customer_content_1}</h4>
                                         </a>
                                          <div class="footer">
                                             <div class="author">
                                                 <a class="card-link" href="#">
                                                    <img src="root/assets/img/default-avatar.png" alt="..." class="avatar">
-                                                   <span> Radu Tintescu </span>
+                                                   <span> {user.company.webpage.customer_content_name_1}</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -290,16 +288,15 @@
                              <div class="col-md-6">
                                  <div class="card card-plain">
                                     <div class="content">
-                                            <h4 class="title">If you like elegant web design, really check out this
-                                                <a target="_blank" href="http://gsdk.creative-tim.com/">link</a>.
-                                                It has just about everything you might need and looks great.
+                                            <h4 class="title">
+                                                <a target="_blank" href="http://gsdk.creative-tim.com/">{user.company.webpage.customer_content_2}</a>
                                             </h4>
 
                                          <div class="footer">
                                             <div class="author">
                                                 <a class="card-link" target="_blank" href="https://twitter.com/tudorvintilescu">
                                                    <img src="root/assets/img/default-avatar.png" alt="..." class="avatar">
-                                                   <span> Alex Paduraru </span>
+                                                   <span> {user.company.webpage.customer_content_name_2} </span>
                                                 </a>
                                             </div>
                                         </div>
@@ -314,30 +311,13 @@
                                 <div class="card card-plain">
                                     <div class="content">
                                         <a target="_blank" href="">
-                                            <h4 class="title">Loved the reusable elements in the 'Get Shit Done Kit'? The PRO version will blow your mind. </h4>
+                                            <h4 class="title">{user.company.webpage.customer_content_3} </h4>
                                         </a>
                                          <div class="footer">
                                             <div class="author">
                                                 <a class="card-link" target="_blank" href="http://www.awwwards.com/">
                                                    <img src="root/assets/img/default-avatar.png" alt="..." class="avatar">
-                                                   <span> Conacel Elena </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                             </div>
-                             <div class="col-md-6">
-                                 <div class="card card-plain">
-                                    <div class="content">
-                                        <a target="_blank" href="http://www.creative-tim.com/product/get-shit-done-pro">
-                                            <h4 class="title">I've bought it, and I have to say that it's simply awesome. Creative Tim creates awesome looking templates! :)</h4>
-                                        </a>
-                                         <div class="footer">
-                                            <div class="author">
-                                                <a class="card-link" target="_blank" href="#">
-                                                   <img src="root/assets/img/default-avatar.png" alt="..." class="avatar">
-                                                   <span> Jay Z </span>
+                                                   <span> {user.company.webpage.customer_content_name_3} </span>
                                                 </a>
                                             </div>
                                         </div>
@@ -363,18 +343,18 @@
     <div class="mapo" style="width:100%;height:500px;" >
            <div class="company-description">
                <h4>{user.company.name}</h4>
-               <p>{user.company.address},{user.company.commune}, {our.country}</p>
+               <p>{user.company.address},{our.city}, {our.country}</p>
            </div>
             <div id="contactUsMap" class="big-map"></div>
     </div>
 
     <div class="section">
            <div class="container">
-               <h2 class="section-title">{user.company.wepage.contact_title_1}</h2>
+               <h2 class="section-title" id="{user.company.webpage.menu_4}">{user.company.webpage.contact_title_1}</h2>
                <div class="row">
                    <div class="col-md-6">
                        <p>
-                           {user.company.wepage.contact_content_1}<br><br>
+                           {user.company.webpage.contact_subtitle_1}<br><br>
                         </p>
                         <form role="form" id="contact-form" method="post">
     						<div class="form-group">
@@ -394,23 +374,21 @@
     				    		<textarea name="message" class="form-control" id="message" rows="6"></textarea>
     				  		</div>
     				  		<div class="submit">
-    				  			<input type="submit" class="btn btn-info btn-fill" value="Contact Us" />
-    				  		</div>
+    				  			<input type="submit" class="btn btn-info btn-fill" value="Contacto" />
+    				  		</div><br>
     					</form>
                    </div>
                    <div class="col-md-4 col-md-offset-2">
                         <div class="contact-info">
-                            <h5><i class="fa fa-map-marker text-muted"></i> Dirección</h5>
-                            <p class="text-muted"> {user.company.address}<br>
-                                {user.company.commune}<br>
+                            <h5><i class="fa fa-building text-muted"></i>Nuestra Empresa</h5>
+                            <p class="text-muted"> {user.company.name}<br>
+                            {user.company.address}<br>
+                                {our.city}<br>
                                 {our.country} 
                             </p><br>
                             <h5><i class="fa fa-phone text-muted"></i> Teléfono</h5>
                             <p class="text-muted"> {user.company.telephone}<br>
                             </p><br>
-                            <h5><i class="fa fa-building text-muted"></i>Nuestra Empresa</h5>
-                            <p class="text-muted"> {user.company.name}<br>
-                            </p>
                         </div>
                    </div>
                </div>
@@ -429,22 +407,22 @@
                         <ul>
                             <li>
                                 <a href="#" >
-                                    {user.company.wepage.menu_1}
+                                    {user.company.webpage.menu_1}
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                   {user.company.wepage.menu_2}
+                                   {user.company.webpage.menu_2}
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    {user.company.wepage.menu_3}
+                                    {user.company.webpage.menu_3}
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                   {user.company.wepage.menu_4}
+                                   {user.company.webpage.menu_4}
                                 </a>
                             </li>
                         </ul>
@@ -466,12 +444,15 @@
             </div>
             <hr />
             <div class="copyright">
+                {user.company.webpage.about_content_1}
+                {user.company.webpage.about_title_1}
                 &copy; 2017 - {user.company.name}
             </div>
         </div>
     </footer>    
     
 	</div> <!-- wrapper --> 
+    </div>
 	</body>
 
    <!--  jQuery and Bootstrap core files    -->
