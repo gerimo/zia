@@ -11,6 +11,9 @@ from datetime import datetime
 from pprint import pprint
 from bson.objectid import ObjectId
 from collections import namedtuple #esto permite traer los resultados de las queries como instancias de objetos.
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
 import start_forever
 
 class FrontEnd(object):
