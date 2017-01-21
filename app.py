@@ -14,6 +14,7 @@ from collections import namedtuple #esto permite traer los resultados de las que
 import sys  
 reload(sys)  
 sys.setdefaultencoding('utf8')
+import forever
 
 class FrontEnd(object):
     name = "TusWebs.cl"
@@ -277,7 +278,10 @@ if __name__ == '__main__':
             'tools.expires.on': True,    
         }
     }
-    cherrypy.config.update({'server.socket_port': 80})
+    host = {
+            'company.com': '/FrontEnd'
+    }
+
     cherrypy.quickstart(FrontEnd(), '/', conf)
 
 
