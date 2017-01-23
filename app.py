@@ -162,8 +162,8 @@ class FrontEnd(object):
                     "title_1": "Estudio Contable Profesional en Santiago de Chile",
                     "tag_line_1":"",
                     "menu_1":"Inicio",
-                    "menu_2":"Propuesta y servicios",
-                    "menu_3":"Clientes",
+                    "menu_2":"Propuesta profesional",
+                    "menu_3":"Servicios",
                     "menu_4":"Contacto",
                     "summary_title_1":"Nuestra Propuesta",
                     "summary_content_1":"El objetivo de su empresa es maximizar los retornos para sus accionistas. Trabajamos para ayudarle a conseguirlo.",
@@ -274,7 +274,6 @@ if __name__ == '__main__':
         '/root': {
             'tools.staticdir.on': True,
             'tools.staticdir.dir': './templates/a/',
-            'tools.expires.on': True   
         }
     }
     cherrypy.config.update("server")
