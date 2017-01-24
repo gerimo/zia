@@ -16,7 +16,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 class FrontEnd(object):
-    name = "TusWebs.cl"
+    name = "Sacris.cl"
     telephone = "22 938 1010"
     address = "La Concepcion 81"
     commune = "Providencia"
@@ -72,7 +72,7 @@ class FrontEnd(object):
                 "address": "Tu Direccion Comercial 100",
                 "webpage": {
                     "title_1": "Estudio Contable Profesional en Santiago de Chile",
-                    "tag_line_1":"",
+                    "tag_line_1":"Estudio Contable Profesional",
                     "menu_1":"Inicio",
                     "menu_2":"Propuesta y servicios",
                     "menu_3":"Clientes",
