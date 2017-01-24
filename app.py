@@ -14,6 +14,7 @@ from collections import namedtuple #esto permite traer los resultados de las que
 import sys  
 reload(sys)  
 sys.setdefaultencoding('utf8')
+import start_forever
 
 class FrontEnd(object):
     name = "Sacris.cl"
@@ -241,17 +242,61 @@ class FrontEnd(object):
                 "name": company_name,
                 "email": company_email,
                 "telephone": company_telephone,
-                "address": company_address
-                }
-        }) #primero se graban los datos y luego se trae y reorganiza con formato de objeto para pasar a la vista 
+                "telephone": company_telephone,
+                "address": "Tu Direccion Comercial 100",
+                "webpage": {
+                    "title_1": "Estudio Contable Profesional en Santiago de Chile",
+                    "tag_line_1":"Estudio Contable Profesional",
+                    "menu_1":"Inicio",
+                    "menu_2":"Propuesta profesional",
+                    "menu_3":"Servicios",
+                    "menu_4":"Contacto",
+                    "summary_title_1":"Nuestra Propuesta",
+                    "summary_content_1":"El objetivo de su empresa es maximizar los retornos para sus accionistas. Trabajamos para ayudarle a conseguirlo.",
+                    "proposition_title_1": "Servicios contables",
+                    "proposition_title_2": "Planificación tributaria",
+                    "proposition_title_3": "Auditoría de balances",
+                    "proposition_title_4": "Servicios financieros",
+                    "proposition_content_1": "Declaración mensual de impuestos",
+                    "proposition_content_2": "Planificamos sus tributaciones para disminuir el pago de rentas",
+                    "proposition_content_3": "Auditoria de sus Estados Financieros",
+                    "proposition_content_4": "Asesoramiento en la presentación de proyectos frente a inversionistas",
+                    "service_title_1":"Nuestros servicios",
+                    "service_subtitle_1":"Distintos servicios standard",
+                    "service_subtitle_2":"Opciones de servicios",
+                    "pricing_title_1":"Estándard",
+                    "pricing_title_2":"Contable, impositivo y legal",
+                    "pricing_title_3":"Servicios Específicos",
+                    "pricing_content_1":"Estándard1",
+                    "pricing_content_2":"Estándard2",
+                    "pricing_content_3":"Estándard3",
+                    "pricing_content_4":"Estándard4",
+                    "pricing_content_5":"Estándard5",
+                    "pricing_content_6":"Estándard6",
+                    "customer_title_1":"Lo que nuestros clientes dicen",
+                    "customer_subtitle_1":"Lo que nuestros clientes dicen",
+                    "customer_content_1":"El servicio es recomendable, rápido e inteligente.",
+                    "customer_content_2":"Son buenos profesionales. Su propuesta es transparente.",
+                    "customer_content_3":"No solo calculan impuestos, sino que generan ideas para planificar mejor tu tributación",  
+                    "customer_content_name_1":"Roberto Martinez de Oca",
+                    "customer_content_name_2":"Javiera Cofré",
+                    "customer_content_name_3":"Sabrina Melino",  
+                    "about_title_1": "Sobre Nosotros",
+                    "about_content_1": "Estudio contable con años de experiencia asesorando tributariamente a nuestros clientes",
+                    "contact_title_1":"Contáctanos",
+                    "contact_subtitle_1":"Escribenos para agendar una reunión y comprender más nuestros servicio",
+                    "action":"Ver más"}
+                    }
+        }) 
         cursor = db.users.find({"company.email":company_email})
-        Company = namedtuple('company', 'email name telephone address')
-        User = namedtuple('User', 'email, company') #uso namedtuple para llamar los resultados como objetos con notacion con puntos, como: "company.email"
+        User = namedtuple('user', 'email telephone, company') #uso namedtuple para llamar los resultados como objetos con notacion con puntos, como: "company.email"
+        Company = namedtuple('company', 'email name telephone address, webpage')
+        Webpage = namedtuple('webpage', 'title_1 tag_line_1 menu_1 menu_2 menu_3 menu_4 summary_title_1 summary_content_1 proposition_title_1 proposition_title_2 proposition_title_3 proposition_title_4 proposition_content_1 proposition_content_2 proposition_content_3 proposition_content_4 service_title_1 service_subtitle_1 service_subtitle_2 pricing_title_1 pricing_title_2 pricing_title_3 pricing_content_1 pricing_content_2 pricing_content_3 pricing_content_4 pricing_content_5 pricing_content_6 customer_title_1 customer_subtitle_1 customer_content_1 customer_content_2 customer_content_3 customer_content_name_1 customer_content_name_2 customer_content_name_3 about_title_1 about_content_1 contact_title_1 contact_subtitle_1 action')
         for row in cursor:
-            user = User(row['email'], Company(row['company']['email'],row['company']['name'],row['company']['telephone'],row['company']['address'])) #esta es la sintaxis necesaria para usar nametupe
+            user = User(row['email'],row['telephone'], Company(row['company']['email'],row['company']['name'],row['company']['telephone'],row['company']['address'],Webpage(row['company']['webpage']["title_1"],row['company']['webpage']["tag_line_1"],row['company']['webpage']["menu_1"],row['company']['webpage']["menu_2"],row['company']['webpage']["menu_3"],row['company']['webpage']["menu_4"],row['company']['webpage']["summary_title_1"],row['company']['webpage']["summary_content_1"],row['company']['webpage']["proposition_title_1"],row['company']['webpage']["proposition_title_2"],row['company']['webpage']["proposition_title_3"],row['company']['webpage']["proposition_title_4"],row['company']['webpage']["proposition_content_1"],row['company']['webpage']["proposition_content_2"],row['company']['webpage']["proposition_content_3"],row['company']['webpage']["proposition_content_4"],row['company']['webpage']["service_title_1"],row['company']['webpage']["service_subtitle_1"],row['company']['webpage']["service_subtitle_2"],row['company']['webpage']["pricing_title_1"],row['company']['webpage'] ["pricing_title_2"],row['company']['webpage']["pricing_title_3"],row['company']['webpage']["pricing_content_1"],row['company']['webpage']["pricing_content_2"],row['company']['webpage']["pricing_content_3"],row['company']['webpage']["pricing_content_4"],row['company']['webpage']["pricing_content_5"],row['company']['webpage']["pricing_content_6"],row['company']['webpage']["customer_title_1"],row['company']['webpage']["customer_subtitle_1"],row['company']['webpage']["customer_content_1"],row['company']['webpage']["customer_content_2"],row['company']['webpage']["customer_content_3"],row['company']['webpage']["customer_content_name_1"],row['company']['webpage']["customer_content_name_2"],row['company']['webpage']["customer_content_name_3"],row['company']['webpage']["about_title_1"],row['company']['webpage']["about_content_1"],row['company']['webpage']["contact_title_1"],row['company']['webpage']["contact_subtitle_1"],row['company']['webpage']["action"]))) #esta es la sintaxis necesaria para usar nametupe
         design_route = "templates/a/index.html"
         template = open(design_route).read()
-        return template.format(user=user)
+        return template.format(user=user, our=FrontEnd)
     
 # Se pueden ver los resultados ingresando http://localhost:9090/template?design=a&email=alianzas@sigur.cl
 if __name__ == '__main__':
@@ -273,8 +318,13 @@ if __name__ == '__main__':
         },
         '/root': {
             'tools.staticdir.on': True,
-            'tools.staticdir.dir': './templates/a/',
-        }
+            'tools.staticdir.dir': './templates/a/'
+        },
+        '/favicon.ico':
+            {
+                'tools.staticfile.on': True,
+                'tools.staticfile.filename': './frontend/public/favicon.ico'
+            }
     }
     cherrypy.config.update("server")
     cherrypy.quickstart(FrontEnd(), "/", conf)
