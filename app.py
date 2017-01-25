@@ -64,19 +64,19 @@ class FrontEnd(object):
         result = db.users.insert_one(
     {
             "email": "email@email.com",
-            "telephone": "22 200 2000",
+            "telephone": "+56 22 200 2000",
             "password": "",
             "company": {
                 "name": "Tu Empresa",
-                "email": "3@3.cl",
-                "telephone": "22 200 2000",
+                "email": "4@4.cl",
+                "telephone": "+56 22 200 2000",
                 "address": "Tu Direccion Comercial 100",
                 "webpage": {
                     "title_1": "Estudio Contable Profesional en Santiago de Chile",
                     "tag_line_1":"Estudio Contable Profesional",
                     "menu_1":"Inicio",
-                    "menu_2":"Propuesta y servicios",
-                    "menu_3":"Clientes",
+                    "menu_2":"Propuesta profesional",
+                    "menu_3":"Servicios",
                     "menu_4":"Contacto",
                     "summary_title_1":"Nuestra Propuesta",
                     "summary_content_1":"El objetivo de su empresa es maximizar los retornos para sus accionistas. Trabajamos para ayudarle a conseguirlo.",
@@ -94,17 +94,17 @@ class FrontEnd(object):
                     "pricing_title_1":"Estándard",
                     "pricing_title_2":"Contable, impositivo y legal",
                     "pricing_title_3":"Servicios Específicos",
-                    "pricing_content_1":"Estándard1",
-                    "pricing_content_2":"Estándard2",
-                    "pricing_content_3":"Estándard3",
-                    "pricing_content_4":"Estándard4",
-                    "pricing_content_5":"Estándard5",
-                    "pricing_content_6":"Estándard6",
-                    "customer_title_1":"Lo que nuestros clientes dicen",
-                    "customer_subtitle_1":"Lo que nuestros clientes dicen",
+                    "pricing_content_1":"Preparación y declaración de F29",
+                    "pricing_content_2":"Aplicación normativas NIC e IFRS",
+                    "pricing_content_3":"Planificación de rentas",
+                    "pricing_content_4":"Revisión de contratos de trabajo",
+                    "pricing_content_5":"Outsourcing contable",
+                    "pricing_content_6":"Auditoría",
+                    "customer_title_1":"Lo que nuestros clientes dicen de nosotros:",
+                    "customer_subtitle_1":"Lo que nuestros clientes dicen de nosotros:",
                     "customer_content_1":"El servicio es recomendable, rápido e inteligente.",
                     "customer_content_2":"Son buenos profesionales. Su propuesta es transparente.",
-                    "customer_content_3":"No solo calculan impuestos, sino que generan ideas para planificar mejor tu tributación",  
+                    "customer_content_3":"Generan ideas para planificar mejor tu tributación",  
                     "customer_content_name_1":"Roberto Martinez de Oca",
                     "customer_content_name_2":"Javiera Cofré",
                     "customer_content_name_3":"Sabrina Melino",  
@@ -161,7 +161,7 @@ class FrontEnd(object):
                 "address": "Tu Direccion Comercial 100",
                 "webpage": {
                     "title_1": "Estudio Contable Profesional en Santiago de Chile",
-                    "tag_line_1":"",
+                    "tag_line_1":"Estudio Contable Profesional",
                     "menu_1":"Inicio",
                     "menu_2":"Propuesta profesional",
                     "menu_3":"Servicios",
@@ -182,17 +182,17 @@ class FrontEnd(object):
                     "pricing_title_1":"Estándard",
                     "pricing_title_2":"Contable, impositivo y legal",
                     "pricing_title_3":"Servicios Específicos",
-                    "pricing_content_1":"Estándard1",
-                    "pricing_content_2":"Estándard2",
-                    "pricing_content_3":"Estándard3",
-                    "pricing_content_4":"Estándard4",
-                    "pricing_content_5":"Estándard5",
-                    "pricing_content_6":"Estándard6",
-                    "customer_title_1":"Lo que nuestros clientes dicen",
-                    "customer_subtitle_1":"Lo que nuestros clientes dicen",
+                    "pricing_content_1":"Preparación y declaración de F29",
+                    "pricing_content_2":"Aplicación normativas NIC e IFRS",
+                    "pricing_content_3":"Planificación de rentas",
+                    "pricing_content_4":"Revisión de contratos de trabajo",
+                    "pricing_content_5":"Outsourcing contable",
+                    "pricing_content_6":"Auditoría",
+                    "customer_title_1":"Lo que nuestros clientes dicen de nosotros:",
+                    "customer_subtitle_1":"Lo que nuestros clientes dicen de nosotros:",
                     "customer_content_1":"El servicio es recomendable, rápido e inteligente.",
                     "customer_content_2":"Son buenos profesionales. Su propuesta es transparente.",
-                    "customer_content_3":"No solo calculan impuestos, sino que generan ideas para planificar mejor tu tributación",  
+                    "customer_content_3":"Generan ideas para planificar mejor tu tributación",  
                     "customer_content_name_1":"Roberto Martinez de Oca",
                     "customer_content_name_2":"Javiera Cofré",
                     "customer_content_name_3":"Sabrina Melino",  
@@ -216,16 +216,21 @@ class FrontEnd(object):
 
 # Opcion Marketing B: Generar vista del template sin que el usuario este registrado
     @cherrypy.expose
-    def unregistered(self):
+    def unregistered(self, design = "a"):
         client = MongoClient()
         db = client.cherrypies
-        cursor = db.users.find({"company.email":"3@3.cl"})
+        cursor = db.users.find({"company.email":"4@4.cl"})
         User = namedtuple('user', 'email telephone, company') #uso namedtuple para llamar los resultados como objetos con notacion con puntos, como: "company.email"
         Company = namedtuple('company', 'email name telephone address, webpage')
         Webpage = namedtuple('webpage', 'title_1 tag_line_1 menu_1 menu_2 menu_3 menu_4 summary_title_1 summary_content_1 proposition_title_1 proposition_title_2 proposition_title_3 proposition_title_4 proposition_content_1 proposition_content_2 proposition_content_3 proposition_content_4 service_title_1 service_subtitle_1 service_subtitle_2 pricing_title_1 pricing_title_2 pricing_title_3 pricing_content_1 pricing_content_2 pricing_content_3 pricing_content_4 pricing_content_5 pricing_content_6 customer_title_1 customer_subtitle_1 customer_content_1 customer_content_2 customer_content_3 customer_content_name_1 customer_content_name_2 customer_content_name_3 about_title_1 about_content_1 contact_title_1 contact_subtitle_1 action')
         for row in cursor:
             user = User(row['email'],row['telephone'], Company(row['company']['email'],row['company']['name'],row['company']['telephone'],row['company']['address'],Webpage(row['company']['webpage']["title_1"],row['company']['webpage']["tag_line_1"],row['company']['webpage']["menu_1"],row['company']['webpage']["menu_2"],row['company']['webpage']["menu_3"],row['company']['webpage']["menu_4"],row['company']['webpage']["summary_title_1"],row['company']['webpage']["summary_content_1"],row['company']['webpage']["proposition_title_1"],row['company']['webpage']["proposition_title_2"],row['company']['webpage']["proposition_title_3"],row['company']['webpage']["proposition_title_4"],row['company']['webpage']["proposition_content_1"],row['company']['webpage']["proposition_content_2"],row['company']['webpage']["proposition_content_3"],row['company']['webpage']["proposition_content_4"],row['company']['webpage']["service_title_1"],row['company']['webpage']["service_subtitle_1"],row['company']['webpage']["service_subtitle_2"],row['company']['webpage']["pricing_title_1"],row['company']['webpage'] ["pricing_title_2"],row['company']['webpage']["pricing_title_3"],row['company']['webpage']["pricing_content_1"],row['company']['webpage']["pricing_content_2"],row['company']['webpage']["pricing_content_3"],row['company']['webpage']["pricing_content_4"],row['company']['webpage']["pricing_content_5"],row['company']['webpage']["pricing_content_6"],row['company']['webpage']["customer_title_1"],row['company']['webpage']["customer_subtitle_1"],row['company']['webpage']["customer_content_1"],row['company']['webpage']["customer_content_2"],row['company']['webpage']["customer_content_3"],row['company']['webpage']["customer_content_name_1"],row['company']['webpage']["customer_content_name_2"],row['company']['webpage']["customer_content_name_3"],row['company']['webpage']["about_title_1"],row['company']['webpage']["about_content_1"],row['company']['webpage']["contact_title_1"],row['company']['webpage']["contact_subtitle_1"],row['company']['webpage']["action"]))) #esta es la sintaxis necesaria para usar nametupe
-        design_route = "templates/a/index.html"
+        if design == "a":
+            design_route = "templates/a/index.html"
+        elif design == "b":
+            design_route = "templates/a/index_b.html"
+        else:
+            design_route = "templates/a/index_c.html"
         template = open(design_route).read()
         return template.format(user=user, our=FrontEnd)
 
@@ -267,17 +272,17 @@ class FrontEnd(object):
                     "pricing_title_1":"Estándard",
                     "pricing_title_2":"Contable, impositivo y legal",
                     "pricing_title_3":"Servicios Específicos",
-                    "pricing_content_1":"Estándard1",
-                    "pricing_content_2":"Estándard2",
-                    "pricing_content_3":"Estándard3",
-                    "pricing_content_4":"Estándard4",
-                    "pricing_content_5":"Estándard5",
-                    "pricing_content_6":"Estándard6",
-                    "customer_title_1":"Lo que nuestros clientes dicen",
-                    "customer_subtitle_1":"Lo que nuestros clientes dicen",
+                    "pricing_content_1":"Preparación y declaración de F29",
+                    "pricing_content_2":"Aplicación normativas NIC e IFRS",
+                    "pricing_content_3":"Planificación de rentas",
+                    "pricing_content_4":"Revisión de contratos de trabajo",
+                    "pricing_content_5":"Outsourcing contable",
+                    "pricing_content_6":"Auditoría",
+                    "customer_title_1":"Lo que nuestros clientes dicen de nosotros:",
+                    "customer_subtitle_1":"Lo que nuestros clientes dicen de nosotros:",
                     "customer_content_1":"El servicio es recomendable, rápido e inteligente.",
                     "customer_content_2":"Son buenos profesionales. Su propuesta es transparente.",
-                    "customer_content_3":"No solo calculan impuestos, sino que generan ideas para planificar mejor tu tributación",  
+                    "customer_content_3":"Generan ideas para planificar mejor tu tributación",  
                     "customer_content_name_1":"Roberto Martinez de Oca",
                     "customer_content_name_2":"Javiera Cofré",
                     "customer_content_name_3":"Sabrina Melino",  
@@ -285,7 +290,8 @@ class FrontEnd(object):
                     "about_content_1": "Estudio contable con años de experiencia asesorando tributariamente a nuestros clientes",
                     "contact_title_1":"Contáctanos",
                     "contact_subtitle_1":"Escribenos para agendar una reunión y comprender más nuestros servicio",
-                    "action":"Ver más"}
+                    "action":"Ver más"
+                        }
                     }
         }) 
         cursor = db.users.find({"company.email":company_email})
